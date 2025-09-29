@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light-theme {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+#particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    transition: transform 0.1s ease;
+}
+
+body.light-theme .particle {
+    background-color: #000000;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body.light-theme .theme-toggle {
+    border-color: #000000;
+    color: #000000;
+}
+
+.theme-toggle:hover {
+    transform: rotate(180deg) scale(1.1);
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+@keyframes slideFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.avatar-container {
+    display: inline-block;
+    animation: slideFromTop 0.8s ease-out;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ffffff;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.avatar:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+body.light-theme .avatar {
+    border-color: #000000;
+}
+
+body.light-theme .avatar:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+    animation: slideFromLeft 0.8s ease-out 0.2s both;
+}
+
+.description {
+    font-size: 1rem;
+    color: #cccccc;
+    margin-bottom: 2rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: slideFromRight 0.8s ease-out 0.4s both;
+}
+
+body.light-theme .description {
+    color: #666666;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    animation: slideFromLeft 0.8s ease-out 0.6s both;
+}
+
+.link {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #ffffff;
+    border-radius: 0px;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+body.light-theme .link {
+    color: #000000;
+    border-color: #000000;
+}
+
+.link:hover {
+    background-color: #ffffff;
+    color: #000000;
+    transform: scale(1.05);
+}
+
+body.light-theme .link:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.link i {
+    font-size: 1.2em;
+    width: 20px;
+}
+
+.footer {
+    font-size: 0.875rem;
+    color: #888888;
+    margin-top: 2rem;
+    animation: slideFromBottom 0.8s ease-out 0.8s both;
+}
+
+body.light-theme .footer {
+    color: #666666;
+}
