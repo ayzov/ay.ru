@@ -183,6 +183,9 @@ h1 {
     margin-left: auto;
     margin-right: auto;
     animation: slideFromRight 0.8s ease-out 0.4s both;
+    line-height: 1.8;
+    text-align: left;
+    padding: 0 1rem;
 }
 
 body.light-theme .description {
@@ -193,6 +196,10 @@ body.light-theme .description {
     color: #ff6b6b;
     font-weight: bold;
     text-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1.1em;
 }
 
 .links {
