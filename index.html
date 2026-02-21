@@ -2,185 +2,89 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ay.ru</title>
-    <link rel="icon" type="image/x-icon" href="https://i.pinimg.com/736x/04/38/59/04385999c550eebc96088710e9f4b0de.jpg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>^_^</title>
+    <link rel="icon" type="image/x-icon" href="https://i.pinimg.com/736x/ec/38/b9/ec38b9120807104f2be132045610b6c6.jpg">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        * {
+        body, html {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background-color: #000000;
-            color: #ffffff;
-            line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-        }
-
-        .container {
-            max-width: 600px;
-            width: 100%;
-            text-align: center;
-        }
-
-        .avatar-container {
-            display: inline-block;
-            animation: slideFromTop 0.8s ease-out;
-        }
-
-        .avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid #ffffff;
-            margin-bottom: 2rem;
-            transition: transform 0.3s ease;
-        }
-
-        .avatar:hover {
-            transform: scale(1.05);
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 600;
-            margin-bottom: 2rem;
-            animation: slideFromLeft 0.8s ease-out 0.2s both;
-        }
-
-        .description {
-            color: #cccccc;
-            margin-bottom: 2rem;
-            line-height: 1.8;
-            animation: slideFromRight 0.8s ease-out 0.4s both;
-        }
-
-        .links {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-top: 2rem;
-            animation: slideFromBottom 0.8s ease-out 0.6s both;
-        }
-
-        .link {
-            text-decoration: none;
-            color: #ffffff;
-            padding: 1rem 2rem;
-            border: 1px solid #ffffff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .link:hover {
-            background-color: #ffffff;
-            color: #000000;
-            transform: translateY(-2px);
-        }
-
-        .link::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-            transition: left 0.5s;
+            background-color: #000000;
+            overflow: hidden;
         }
-
-        .link:hover::before {
-            left: 100%;
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
         }
-
-        /* Анимации появления */
-        @keyframes slideFromTop {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #ffffff;
+            font-family: 'Bahnschrift', 'Inter', sans-serif;
+            text-align: center;
+            transition: transform 0.15s ease-out;
+            pointer-events: none; 
         }
-
-        @keyframes slideFromLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideFromRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideFromBottom {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .text-box {
+            max-width: 600px;
+            padding: 20px;
+            pointer-events: auto;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="avatar-container">
-            <img src="https://i.pinimg.com/736x/05/85/10/058510fb2b4fbd9fd46d62b7c60e2c3b.jpg" alt="Avatar" class="avatar">
-        </div>
-        
-        <h1>ay.ru</h1>
-        
-        <div class="description">
-            <p>теперь тут пусто(</p>
-            <p>а жаль когда то тут было хоть что то написано</p>
-        </div>
 
-        <div class="links">
-            <a href="https://github.com/ayzov" class="link">
-                <i class="fab fa-github"></i>
-                GitHub
-            </a>
-            <a href="https://www.youtube.com/@Ya0011" class="link">
-                <i class="fab fa-youtube"></i>
-                YouTube
-            </a>
-            <a href="https://steamcommunity.com/id/ay_ru/" class="link">
-                <i class="fab fa-steam"></i>
-                Steam
-            </a>
+    <div id="particles-js"></div>
+
+    <div class="content" id="float-text">
+        <div class="text-box">
+            <h1>ay.ru</h1>
+            <p>nothing...</p>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 80 },
+                "color": { "value": "#ffffff" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5, "random": true },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": false },
+                "move": { "enable": true, "speed": 1, "random": true, "out_mode": "out" }
+            },
+            "interactivity": { "events": { "onhover": { "enable": false } } },
+            "retina_detect": true
+        });
+
+        const txt = document.getElementById('float-text');
+        document.addEventListener('mousemove', (e) => {
+            let x = (e.pageX - window.innerWidth / 2) / 60;
+            let y = (e.pageY - window.innerHeight / 2) / 60;
+            txt.style.transform = `translate(${x}px, ${y}px)`;
+        });
+
+        const tabTitles = [
+          "(=^･ω･^=)", "(>_<)", "(◕‿◕)♡", "(o^▽^o)", "(・`ω´・)",
+          "(｡♥‿♥｡)", "(=^-ω-^=)", "UwU", "(*^ω^*)", "(^◕ᴥ◕^)",
+          "(^人^)", "(≧◡≦)", "(´ ε ` )♡", "(=;ω;=)"
+        ];
+        let i = 0;
+        setInterval(() => {
+            document.title = tabTitles[i];
+            i = (i + 1) % tabTitles.length;
+        }, 600);
+    </script>
 </body>
 </html>
