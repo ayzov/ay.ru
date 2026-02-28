@@ -5,7 +5,10 @@
     <title>^_^</title>
     <link rel="icon" type="image/x-icon" href="https://i.pinimg.com/736x/ec/38/b9/ec38b9120807104f2be132045610b6c6.jpg">
     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    
     <style>
         body, html {
             margin: 0;
@@ -14,6 +17,10 @@
             height: 100%;
             background-color: #000000;
             overflow: hidden;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
         }
         #particles-js {
             position: absolute;
@@ -31,29 +38,80 @@
             color: #ffffff;
             font-family: 'Bahnschrift', 'Inter', sans-serif;
             text-align: center;
-            transition: transform 0.15s ease-out;
-            pointer-events: none; 
         }
         .text-box {
             max-width: 600px;
             padding: 20px;
-            pointer-events: auto;
+            transition: transform 0.15s ease-out;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .footer-links {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            display: flex;
+            gap: 25px;
+        }
+        .footer-links a {
+            color: #ffffff;
+            font-size: 22px;
+            opacity: 0.4;
+            transition: all 0.4s ease;
+            text-decoration: none;
+        }
+        .footer-links a:hover {
+            opacity: 1;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            transform: translateY(-3px);
+        }
+        .handwritten {
+            font-family: 'Shadows Into Light', cursive;
+            font-size: 1.2em;
+            color: #ffffff;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+            display: inline-block;
+            transform: rotate(-3deg);
+            margin-left: 4px;
         }
     </style>
 </head>
-<body>
-
+<body oncontextmenu="return false;"> 
     <div id="particles-js"></div>
 
-    <div class="content" id="float-text">
-        <div class="text-box">
+    <div class="content">
+        <div id="float-box" class="text-box">
             <h1>ay.ru</h1>
-            <p>nothing...</p>
+            <p>lost in gmod & dota. 7.5k hours of <span class="handwritten">escapism</span>. i’m <span class="handwritten">fine</span>, really.</p>  
         </div>
+    </div>
+
+    <div class="footer-links">
+        <a href="https://www.youtube.com/@eblanograd" target="_blank" title="YouTube">
+            <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://steamcommunity.com/id/ay_ru/" target="_blank" title="Steam">
+            <i class="fab fa-steam"></i>
+        </a>
+        <a href="https://github.com/ayzov" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+        </a>
     </div>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && (e.keyCode === 65 || e.keyCode === 85 || e.keyCode === 83 || e.keyCode === 73)) {
+                e.preventDefault();
+            }
+        });
+
         particlesJS("particles-js", {
             "particles": {
                 "number": { "value": 80 },
@@ -64,22 +122,23 @@
                 "line_linked": { "enable": false },
                 "move": { "enable": true, "speed": 1, "random": true, "out_mode": "out" }
             },
-            "interactivity": { "events": { "onhover": { "enable": false } } },
+            "interactivity": { 
+                "events": { 
+                    "onhover": { "enable": false }, 
+                    "onclick": { "enable": false }
+                } 
+            },
             "retina_detect": true
         });
 
-        const txt = document.getElementById('float-text');
+        const box = document.getElementById('float-box');
         document.addEventListener('mousemove', (e) => {
-            let x = (e.pageX - window.innerWidth / 2) / 60;
-            let y = (e.pageY - window.innerHeight / 2) / 60;
-            txt.style.transform = `translate(${x}px, ${y}px)`;
+            let x = (e.pageX - window.innerWidth / 2) / 100;
+            let y = (e.pageY - window.innerHeight / 2) / 100;
+            box.style.transform = `translate(${x}px, ${y}px)`;
         });
 
-        const tabTitles = [
-          "(=^･ω･^=)", "(>_<)", "(◕‿◕)♡", "(o^▽^o)", "(・`ω´・)",
-          "(｡♥‿♥｡)", "(=^-ω-^=)", "UwU", "(*^ω^*)", "(^◕ᴥ◕^)",
-          "(^人^)", "(≧◡≦)", "(´ ε ` )♡", "(=;ω;=)"
-        ];
+        const tabTitles = ["(=^･ω･^=)", "(>_<)", "(◕‿◕)♡", "(o^▽^o)", "(・`ω´・)", "(｡♥‿♥｡)", "(=^-ω-^=)", "UwU", "(*^ω^*)", "(^◕ᴥ◕^)", "(^人^)", "(≧◡≦)", "(´ ε ` )♡", "(=;ω;=)"];
         let i = 0;
         setInterval(() => {
             document.title = tabTitles[i];
@@ -88,3 +147,5 @@
     </script>
 </body>
 </html>
+
+ыыыыыыыыыыыыыыы
